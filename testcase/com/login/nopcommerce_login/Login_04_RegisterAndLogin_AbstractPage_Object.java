@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 
 import commons.AbstractPage;
 import commons.AbstractPages;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects_nopcommerce.HomePageObject;
+import pageObjects_nopcommerce.LoginPageObject;
+import pageObjects_nopcommerce.RegisterPageObject;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -20,7 +20,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-public class Login_04_RegisterAndLogin_AbstractPage_Object extends AbstractPages {	
+public class Login_04_RegisterAndLogin_AbstractPage_Object {	
 
 	WebDriver driver;
 	Select select;
@@ -30,7 +30,7 @@ public class Login_04_RegisterAndLogin_AbstractPage_Object extends AbstractPages
 	String email = "coronavirus" + randomNumber() + "@hotmail.com";
 	String company = "Kientoan";
 	String password = "Abc1234";
-	long longTimeOut = 15;
+	long longTimeOut = 20;
 	String dob = "24";
 	String mob = "February";
 	String yob = "1985";
@@ -52,7 +52,8 @@ public class Login_04_RegisterAndLogin_AbstractPage_Object extends AbstractPages
 		}
 
 		driver = new FirefoxDriver();
-		openUrl(driver, "http://demo.nopcommerce.com");
+		driver.get("http://demo.nopcommerce.com"); 
+		homePage = new HomePageObject(driver);
 		driver.manage().timeouts().implicitlyWait(longTimeOut, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
@@ -88,6 +89,7 @@ public class Login_04_RegisterAndLogin_AbstractPage_Object extends AbstractPages
 //		Assert.assertEquals(msgSuccess, "Your registration completed");
 //		System.out.println("message success: " + msgSuccess);
 		registerSuccessMsg = registerPage.getRegisterSuccessMsg();
+		Assert.assertEquals(registerSuccessMsg, "Your registration completed");
 //		clickToElement(driver,"//a[@class='ico-logout']");
 		homePage = registerPage.clickToLogoutBtn();
 

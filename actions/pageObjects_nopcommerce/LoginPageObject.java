@@ -1,12 +1,16 @@
-package pageObjects;
+package pageObjects_nopcommerce;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPages;
-import pageUIs.LoginPageUI;
+import pageUIs_nopcommerce.LoginPageUI;
 
 public class LoginPageObject extends AbstractPages {
 	private WebDriver driver;
+	
+	public LoginPageObject(WebDriver _driver) {
+		driver = _driver;
+	}
 	
 	public void sendKeyToEmailTextBox(String emailValue) {
 		waitToElementDisplayed(driver, LoginPageUI.EMAIL);
@@ -22,7 +26,7 @@ public class LoginPageObject extends AbstractPages {
 	public HomePageObject clickToLoginBtn() {
 		waitToElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return new HomePageObject();
+		return new HomePageObject(driver);
 	}
 
 }

@@ -1,4 +1,4 @@
-package pageUIs;
+package pageUIs_nopcommerce;
 
 public class LoginPageUI {
 	public static final String EMAIL = "//input[@id='Email']";

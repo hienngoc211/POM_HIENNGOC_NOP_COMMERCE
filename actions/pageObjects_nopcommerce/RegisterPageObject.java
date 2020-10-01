@@ -1,12 +1,16 @@
-package pageObjects;
+package pageObjects_nopcommerce;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPages;
-import pageUIs.RegisterPageUI;
+import pageUIs_nopcommerce.RegisterPageUI;
 
 public class RegisterPageObject extends AbstractPages {
 	private WebDriver driver;
+	
+	public RegisterPageObject(WebDriver _driver) {
+		driver = _driver;
+	}
 
 	public void clickToMale() {
 		waitToElementClickable(driver, RegisterPageUI.GENDER_CHECKBOX);
@@ -78,7 +82,7 @@ public class RegisterPageObject extends AbstractPages {
 	public HomePageObject clickToLogoutBtn() {
 		waitToElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
-		return new HomePageObject();
+		return new HomePageObject(driver);
 	}
 
 

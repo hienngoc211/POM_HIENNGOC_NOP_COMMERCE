@@ -1,7 +1,7 @@
-package pageUIs;
+package pageUIs_nopcommerce;
 
 public class RegisterPageUI {
-	public static final String GENDER_CHECKBOX = "//input[@id='gender-male']";
+	public static final String GENDER_CHECKBOX = "//input[@value='M']";
 	public static final String FIRST_NAME = "//input[@id='FirstName']";
 	public static final String LAST_NAME = "//input[@id='LastName']";
 	public static final String DAY_DROPDOWN = "//select[@name='DateOfBirthDay']";
