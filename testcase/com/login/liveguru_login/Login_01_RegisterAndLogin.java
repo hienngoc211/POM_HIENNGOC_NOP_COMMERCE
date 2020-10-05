@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import pageObjects_liveguru.HomePageObject_liveguru;
 import pageObjects_liveguru.LoginPageObject_liveguru;
-import pageObjects_liveguru.RegisterPageObject_liveguru;
+import pageObjects_liveguru.DashboardPageObject_liveguru;
 
 import org.testng.annotations.BeforeClass;
 
@@ -23,13 +23,13 @@ import org.testng.annotations.AfterTest;
 public class Login_01_RegisterAndLogin {
 
 	WebDriver driver;
-	private HomePageObject_liveguru homepage;
 	String email = "automation" + randomNumber() + "gmail.com";
-	String password = "123456789";
+//	String password = "123456789";
 	private HomePageObject_liveguru homePage;
 	private LoginPageObject_liveguru loginPage;
-	private RegisterPageObject_liveguru registerPage;
-	
+	private DashboardPageObject_liveguru dashboardPage;
+	String errorMsg;
+
 			
 
 	@BeforeTest
@@ -45,8 +45,8 @@ public class Login_01_RegisterAndLogin {
 		}
 		driver = new FirefoxDriver();
 		driver.get("http://live.demoguru99.com/index.php");
-		homepage = new HomePageObject_liveguru(driver);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		homePage = new HomePageObject_liveguru(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
 
@@ -57,30 +57,49 @@ public class Login_01_RegisterAndLogin {
 		loginPage.sendKeyToEmailTextbox("");
 		loginPage.sendKeyToPasswordTextbox("");
 		loginPage.clickToLoginBtn();
-		
+		Assert.assertTrue(loginPage.isDisplayedErrorMsgPass("This is a required field."));
 	}
 
 	@Test
 
 	public void TC_02_LoginInvalidEmail() {
-
+		loginPage.sendKeyToEmailTextbox("123@123.789");
+		loginPage.sendKeyToPasswordTextbox("12345fgh");
+		loginPage.clickToLoginBtn();
+		Assert.assertTrue(loginPage.InvalidEmailErrorMsgDisplayed("Invalid login or password."));
+		
+		
+		
 	}
 
 	@Test
 
 	public void TC_03_LoginIncorrectEmail() {
+		loginPage.sendKeyToEmailTextbox("automationfc" + randomNumber() + "gmail.com");
+		loginPage.sendKeyToPasswordTextbox("12345fgh");
+		loginPage.clickToLoginBtn();
+		Assert.assertTrue(loginPage.IncorrectEmailMsgDisplayed());
 
 	}
 	
 	@Test
 
 	public void TC_04_LoginIncorrecPassword() {
+		loginPage.sendKeyToEmailTextbox("automationabc@hotmail.com");
+		loginPage.sendKeyToPasswordTextbox("745686juhikng&");
+		loginPage.clickToLoginBtn();
+		Assert.assertTrue(loginPage.IncorrectPasslMsgDisplayed());
 
 	}
+	
 	
 	@Test
 
 	public void TC_05_LoginWithPasswordLessThan6Chars() {
+		loginPage.sendKeyToEmailTextbox("automationabc@hotmail.com");
+		loginPage.sendKeyToPasswordTextbox("12d");
+		loginPage.clickToLoginBtn();
+		Assert.assertTrue(loginPage.PasswordLessThan6Chars());
 
 	}
 	

@@ -15,6 +15,7 @@ public class HomePageObject_liveguru extends AbstractPages {
 
 	public LoginPageObject_liveguru clickToMyAccountFooter() {
 		waitToElementClickable(driver, HomePageUI_liveguru.MY_ACCOUNT_FOOTER);
+		clickToElement(driver, HomePageUI_liveguru.MY_ACCOUNT_FOOTER);
 		return new LoginPageObject_liveguru(driver);
 	}
 	

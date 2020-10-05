@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractPages;
 import pageUIs_nopcommerce.RegisterPageUI;
 
-public class RegisterPageObject_liveguru extends AbstractPages {
+public class DashboardPageObject_liveguru extends AbstractPages {
 	private WebDriver driver;
 	
-	public RegisterPageObject_liveguru(WebDriver _driver) {
+	public DashboardPageObject_liveguru(WebDriver _driver) {
 		driver = _driver;
 	}
 
