@@ -48,7 +48,7 @@ public class Login_01_RegisterAndLogin {
 		driver.manage().window().maximize();
 	}
 
-//	@Test
+	@Test
 
 	public void TC_01_LoginWithEmptyEmailAndPassword() {
 		loginPage = homePage.clickToMyAccountFooter();
@@ -73,7 +73,7 @@ public class Login_01_RegisterAndLogin {
 	@Test
 
 	public void TC_03_LoginEmailNotExist() {
-		loginPage.sendKeyToEmailTextbox(email);
+		loginPage.sendKeyToEmailTextbox("automationfc" + randomNumber() + "@gmail.com");
 		loginPage.sendKeyToPasswordTextbox("123456789");
 		loginPage.clickToLoginBtn();
 		Assert.assertTrue(loginPage.isEmailNotExistOrInvalidPasswordErrorMsgDisplayed("Invalid login or password."));
