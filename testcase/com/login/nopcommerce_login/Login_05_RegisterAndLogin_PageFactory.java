@@ -1,24 +1,20 @@
 package com.login.nopcommerce_login;
 
-import org.testng.annotations.Test;
-
-import commons.AbstractPage;
-import commons.AbstractPages;
-import pageFactory.nopcommerce.HomePageObject;
-import pageFactory.nopcommerce.LoginPageObject;
-import pageFactory.nopcommerce.RegisterPageObject;
-
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import pageFactory.nopcommerce.HomePageObject;
+import pageFactory.nopcommerce.LoginPageObject;
+import pageFactory.nopcommerce.RegisterPageObject;
 
 public class Login_05_RegisterAndLogin_PageFactory {	
 
@@ -30,7 +26,7 @@ public class Login_05_RegisterAndLogin_PageFactory {
 	String email = "coronavirus" + randomNumber() + "@hotmail.com";
 	String company = "Kientoan";
 	String password = "Abc1234";
-	long longTimeOut = 20;
+	long longTimeOut = 30;
 	String dob = "24";
 	String mob = "February";
 	String yob = "1985";
@@ -60,11 +56,12 @@ public class Login_05_RegisterAndLogin_PageFactory {
 
 	@Test
 
-	public void TC_01_RegisterToSystem() {
+	public void TC_01_RegisterToSystem() throws InterruptedException {
 //		clickToElement(driver,"//a[@class='ico-register']");
 		registerPage = homePage.clickToRegisterLink();
 //		clickToElement(driver,"//input[@value='M']");
 		registerPage.clickToMale();
+		Thread.sleep(3000);
 //		sendKeyToElement(driver,"//input[@id='FirstName']", firstName);
 		registerPage.inputToFirstName(firstName);
 //		sendKeyToElement(driver,"//input[@id='LastName']", lastName);

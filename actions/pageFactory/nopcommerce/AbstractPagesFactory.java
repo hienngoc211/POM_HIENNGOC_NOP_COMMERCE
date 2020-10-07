@@ -3,7 +3,6 @@ package pageFactory.nopcommerce;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -83,13 +82,8 @@ public class AbstractPagesFactory {
 	}
 
 	public void sendKeyToElement(WebDriver driver,WebElement element, String value) {
-		element.clear();
+//		element.clear();
 		element.sendKeys(value);
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public int countElementNumber(WebDriver driver,String locator) {
