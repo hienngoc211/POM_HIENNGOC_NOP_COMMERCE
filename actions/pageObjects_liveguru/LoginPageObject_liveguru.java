@@ -42,7 +42,7 @@ public class LoginPageObject_liveguru extends AbstractPages {
 	}
 
 	public boolean InvalidEmailErrorMsgDisplayed(String errorMsg) {
-		waitToElementClickable(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_INVALID_EMAIL, errorMsg));
+		waitToElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_INVALID_EMAIL, errorMsg));
 		return isElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_INVALID_EMAIL, errorMsg));
 	}
 

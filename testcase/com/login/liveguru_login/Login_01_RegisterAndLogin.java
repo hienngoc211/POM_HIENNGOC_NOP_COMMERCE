@@ -44,7 +44,7 @@ public class Login_01_RegisterAndLogin {
 		driver = new FirefoxDriver();
 		driver.get("http://live.demoguru99.com/index.php");
 		homePage = new HomePageObject_liveguru(driver);
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
 
@@ -60,14 +60,13 @@ public class Login_01_RegisterAndLogin {
 
 	}
 
-//	@Test
+	@Test
 
 	public void TC_02_LoginInvalidEmail() {
 		loginPage.sendKeyToEmailTextbox("123@123.789");
 		loginPage.sendKeyToPasswordTextbox("123123");
 		loginPage.clickToLoginBtn();
 		Assert.assertTrue(loginPage.InvalidEmailErrorMsgDisplayed("Please enter a valid email address. For example johndoe@domain.com."));
-		
 	}
 
 	@Test
@@ -99,12 +98,12 @@ public class Login_01_RegisterAndLogin {
 		loginPage.clickToLoginBtn();
 		Assert.assertTrue(loginPage.isEmailNotExistOrInvalidPasswordErrorMsgDisplayed("Invalid login or password."));
 	}
-		@Test
+
+	@Test
 	
 	public void TC_06_LoginWithValidEmailAndPassword() {
 		loginPage.sendKeyToEmailTextbox("automationabc@gmail.com");
 		loginPage.sendKeyToPasswordTextbox("123456789");
-		loginPage.clickToLoginBtn();
 		loginPage.clickToLoginBtn();
 		myDashboardPage = new DashboardPageObject_liveguru(driver);
 		Assert.assertTrue(myDashboardPage.isFullNameOrEmailDisplayed("automationFC Tester"));
