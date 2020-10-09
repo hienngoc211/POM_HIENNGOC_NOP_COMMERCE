@@ -12,11 +12,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageFactory.nopcommerce.HomePageObject;
-import pageFactory.nopcommerce.LoginPageObject;
-import pageFactory.nopcommerce.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects_nopcommerce.HomePageObject;
+import pageObjects_nopcommerce.LoginPageObject;
+import pageObjects_nopcommerce.RegisterPageObject;
 
-public class Login_05_RegisterAndLogin_PageFactory {	
+
+public class Login_05_RegisterAndLogin_PageGenerator {	
 
 	WebDriver driver;
 	Select select;
@@ -46,10 +48,10 @@ public class Login_05_RegisterAndLogin_PageFactory {
 			System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver_linux");
 
 		}
-
 		driver = new FirefoxDriver();
 		driver.get("http://demo.nopcommerce.com"); 
-		homePage = new HomePageObject(driver);
+//		homePage = new HomePageObject(driver);
+		homePage = PageGeneratorManager.getHomePage(driver);
 		driver.manage().timeouts().implicitlyWait(longTimeOut, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
@@ -58,7 +60,10 @@ public class Login_05_RegisterAndLogin_PageFactory {
 
 	public void TC_01_RegisterToSystem() throws InterruptedException {
 //		clickToElement(driver,"//a[@class='ico-register']");
+//		Cach 2
 		registerPage = homePage.clickToRegisterLink();
+//		Cach 1
+//		registerPage = new RegisterPageObject(driver);
 //		clickToElement(driver,"//input[@value='M']");
 		registerPage.clickToMale();
 //		sendKeyToElement(driver,"//input[@id='FirstName']", firstName);

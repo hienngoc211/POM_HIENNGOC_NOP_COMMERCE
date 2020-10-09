@@ -1,22 +1,28 @@
 package com.login.nopcommerce_login;
 
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import pageFactory.nopcommerce.HomePageObject;
-import pageFactory.nopcommerce.LoginPageObject;
-import pageFactory.nopcommerce.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects_nopcommerce.HomePageObject;
+import pageObjects_nopcommerce.LoginPageObject;
+import pageObjects_nopcommerce.RegisterPageObject;
 
-public class Login_05_RegisterAndLogin_PageFactory {	
+public class Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting {
 
 	WebDriver driver;
 	Select select;
@@ -35,58 +41,55 @@ public class Login_05_RegisterAndLogin_PageFactory {
 	private LoginPageObject loginPage;
 	private RegisterPageObject registerPage;
 
+	@Parameters({"browser", "url"})
 	@BeforeTest
-	public void beforeTest() {
-		String osName = System.getProperty("os.name");
-		if (osName.toLowerCase().contains("windows")) {
-			System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver.exe");
-		} else if (osName.toLowerCase().contains("mac")) {
+	public void beforeTest(String browserName, String UATUrl) {
+//		System.out.println("Browser name = " + browserName);
+//		System.out.println("UAT url= " + UATUrl);
+		if(browserName.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "./BrowserDrivers/chromedriver");
+			driver = new ChromeDriver();
+		} else if(browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver_mac");
-		} else {
-			System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver_linux");
+			driver = new FirefoxDriver();
+		} else if (browserName.equalsIgnoreCase("headless_chrome")) {
+			System.setProperty("webdriver.chrome.driver", "./BrowserDrivers/chromedriver");
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new ChromeDriver(options);
+		} else if(browserName.equalsIgnoreCase("headless_firefox")){
+			System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver_mac");
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new FirefoxDriver(options);
 
-		}
-
-		driver = new FirefoxDriver();
-		driver.get("http://demo.nopcommerce.com"); 
-		homePage = new HomePageObject(driver);
+		
+		driver.get(UATUrl); 
+		homePage = PageGeneratorManager.getHomePage(driver);
 		driver.manage().timeouts().implicitlyWait(longTimeOut, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		
+		}
 	}
-
 	@Test
 
 	public void TC_01_RegisterToSystem() throws InterruptedException {
-//		clickToElement(driver,"//a[@class='ico-register']");
 		registerPage = homePage.clickToRegisterLink();
-//		clickToElement(driver,"//input[@value='M']");
 		registerPage.clickToMale();
-//		sendKeyToElement(driver,"//input[@id='FirstName']", firstName);
 		registerPage.inputToFirstName(firstName);
-//		sendKeyToElement(driver,"//input[@id='LastName']", lastName);
 		registerPage.inputToLastName(lastName);
-//		selectItemInDropdown(driver,"//select[@name='DateOfBirthDay']", dob);
 		registerPage.selectDateDropdown(dob);
-//		selectItemInDropdown(driver,"//select[@name='DateOfBirthMonth']", mob);
 		registerPage.selectMonthDropdown(mob);
-//		selectItemInDropdown(driver,"//select[@name='DateOfBirthYear']", yob);
 		registerPage.selectYearDropdown(yob);
-//		sendKeyToElement(driver,"//input[@id='Email']", email);
 		registerPage.sendKeyToEmail(email);
-//		sendKeyToElement(driver,"//input[@id='Company']", company);
 		registerPage.sendKeyToCompany(company);
-//		sendKeyToElement(driver,"//input[@id='Password']", password);
 		registerPage.sendKeyToPassword(password);
-//		sendKeyToElement(driver,"//input[@id='ConfirmPassword']", password);
 		registerPage.sendKeyToConfirmPassWord(password);
-//		clickToElement(driver,"//input[@id='register-button']");
 		registerPage.clickToRegisterBtn();
-//		String msgSuccess = driver.findElement(By.className("result")).getText();
-//		Assert.assertEquals(msgSuccess, "Your registration completed");
-//		System.out.println("message success: " + msgSuccess);
 		registerSuccessMsg = registerPage.getRegisterSuccessMsg();
 		Assert.assertEquals(registerSuccessMsg, "Your registration completed");
-//		clickToElement(driver,"//a[@class='ico-logout']");
 		homePage = registerPage.clickToLogoutBtn();
 
 	}
@@ -94,15 +97,10 @@ public class Login_05_RegisterAndLogin_PageFactory {
 	@Test
 
 	public void TC_02_LoginToSystem() {
-//		clickToElement(driver,"//a[@class='ico-login']");
 		loginPage = homePage.clickToLoginLink();
-//		sendKeyToElement(driver,"//input[@id='Email']", email);
 		loginPage.sendKeyToEmailTextBox(email);
-//		sendKeyToElement(driver,"//input[@id='Password']", password);
 		loginPage.sendKeyToPasswordTextBox(password);
-//		clickToElement(driver,"//input[@class='button-1 login-button']");
 		homePage = loginPage.clickToLoginBtn();
-//		Assert.assertTrue(driver.findElement(By.xpath("//a[@class='ico-account']")).isDisplayed());
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 	}
 

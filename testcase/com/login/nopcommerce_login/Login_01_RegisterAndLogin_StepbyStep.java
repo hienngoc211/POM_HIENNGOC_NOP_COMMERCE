@@ -29,7 +29,7 @@ public class Login_01_RegisterAndLogin_StepbyStep {
 	
  @BeforeTest
  	public void beforeTest() {
-	System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver");
+	System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver_mac");
 	   driver = new FirefoxDriver();
 	   driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	   driver.manage().window().maximize();

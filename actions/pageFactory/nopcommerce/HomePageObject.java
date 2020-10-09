@@ -23,11 +23,20 @@ public class HomePageObject extends AbstractPagesFactory {
 	@FindBy(xpath = "//div[@class='header-links']//a[contains(text(),'My account')]")
 	private WebElement myAccountLink;
 
+	// Cach 1
 	public RegisterPageObject clickToRegisterLink() {
 		waitToElementClickable(driver, registerLink);
 		clickToElement(driver, registerLink);
 		return new RegisterPageObject(driver);
 	}
+	
+	// Cach 2
+//	public void clickToRegisterLink() {
+//		waitToElementClickable(driver, registerLink);
+//		clickToElement(driver, registerLink);
+//	}
+//	
+	
 
 	public LoginPageObject clickToLoginLink() {
 		waitToElementClickable(driver, loginLink);
