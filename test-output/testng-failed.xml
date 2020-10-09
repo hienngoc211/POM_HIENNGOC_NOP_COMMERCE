@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
-  <test name="Run on Firefox">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
     <classes>
-      <class name="com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage"/>
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
     </classes>
-  </test> <!-- Run on Firefox -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting">
+        <methods>
+          <include name="TC_01_RegisterToSystem"/>
+          <include name="TC_02_LoginToSystem"/>
+        </methods>
+      </class> <!-- com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
