@@ -26,10 +26,10 @@ public class HomePageObject extends AbstractPages {
 	}
 
 	public boolean isMyAccountLinkDisplayed() {
-		waitToElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
-		return isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK) ;
+		waitToElementDisplayed(driver, HomePageUI.HEADER_MY_ACCOUNT_LINK);
+		return isElementDisplayed(driver, HomePageUI.HEADER_MY_ACCOUNT_LINK) ;
 	}
-	
+
 	
 	
 

@@ -3,7 +3,6 @@ package commons;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AbstractPages {
+import pageObjects_nopcommerce.FooterMyAccountPageObject;
+import pageObjects_nopcommerce.FooterNewProductsPageObject;
+import pageObjects_nopcommerce.FooterSearchPageObject;
+import pageObjects_nopcommerce.HomePageObject;
+import pageUIs_nopcommerce.AbstractPageUI;
+
+public abstract class AbstractPages {
 
 	private long longTimeOut = 30;
 	private Actions action;
@@ -86,6 +91,15 @@ public class AbstractPages {
 //		findElementByXpath(driver, locator).clear();
 		findElementByXpath(driver, locator).sendKeys(value);
 	}
+	
+	public void sleepInSecond(long timeout) {
+		try {
+			Thread.sleep(timeout*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public int countElementNumber(WebDriver driver,String locator) {
 		return findElementsByXpath(driver, locator).size();
@@ -130,6 +144,33 @@ public class AbstractPages {
 	}
 	public String getTextElement(WebDriver driver, String locator) {
 		return findElementByXpath(driver, locator).getText();
+	}
+	
+//	Open Footer Page
+	
+	public FooterMyAccountPageObject openFooterMyAccountPage(WebDriver driver) {
+		waitToElementClickable(driver, AbstractPageUI.FOOTER_MY_ACCOUNT_LINK);
+		clickToElement(driver, AbstractPageUI.FOOTER_MY_ACCOUNT_LINK);
+		return PageGeneratorManager.getFooterMyAccountPage(driver);
+	}
+
+	
+	public FooterSearchPageObject openSearchPage(WebDriver driver) {
+		waitToElementClickable(driver, AbstractPageUI.FOOTER_SEARCH_LINK);
+		clickToElement(driver, AbstractPageUI.FOOTER_SEARCH_LINK);
+		return PageGeneratorManager.getFooterSearchPageObject(driver);
+	}
+
+	public HomePageObject openHomePage(WebDriver driver) {
+		waitToElementClickable(driver, AbstractPageUI.HOME_PAGE_LINK);
+		clickToElement(driver, AbstractPageUI.HOME_PAGE_LINK);
+		return PageGeneratorManager.getHomePage(driver);
+	}
+
+	public FooterNewProductsPageObject openNewProductsPage(WebDriver driver) {
+		waitToElementClickable(driver, AbstractPageUI.FOOTER_NEW_PRODUCT_LINK);
+		clickToElement(driver, AbstractPageUI.FOOTER_NEW_PRODUCT_LINK);
+		return PageGeneratorManager.getFooterNewProductsPageObject(driver);
 	}
 
 }
