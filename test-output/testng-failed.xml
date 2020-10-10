@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
-  <test name="Run on Firefox">
+<suite name="Failed suite [Nop Commerce]">
+  <parameter name="browser" value="headless_firefox"/>
+  <test name="Run on CHROME">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage"/>
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
+    </classes>
+  </test> <!-- Run on CHROME -->
+  <test name="Run on Firefox">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
     </classes>
   </test> <!-- Run on Firefox -->
-</suite> <!-- Failed suite [Suite] -->
+  <test name="Run on Chrome headless">
+    <parameter name="browser" value="headless_chrome"/>
+    <classes>
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
+    </classes>
+  </test> <!-- Run on Chrome headless -->
+  <test name="Run on Firefox headless">
+    <parameter name="browser" value="headless_firefox"/>
+    <classes>
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
+    </classes>
+  </test> <!-- Run on Firefox headless -->
+</suite> <!-- Failed suite [Nop Commerce] -->

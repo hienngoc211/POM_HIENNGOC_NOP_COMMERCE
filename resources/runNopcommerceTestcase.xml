@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite parallel="false" name="Nop Commerce">
-	<parameter name="url" value = "http://demo.nopcommerce.com"/>
+<suite name="Nop Commerce" parallel="tests" thread-count="3">
 
-  <test name="Run on CHORME">
+  <test name="Run on CHROME">
   <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
     </classes>
-  </test> 
+  </test>
   
-  
-  <test name="Run on FIREFOX">
-  <parameter name="browser" value="firefox"/>
+  <test name="Run on Firefox">
+  <parameter name="browser" value="Firefox"/>
     <classes>
       <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
-    </classes>   
-  </test> 
+    </classes>
+  </test>
   
-  
-  <test name="Run on Chrome Headless">
+  <test name="Run on Chrome headless">
   <parameter name="browser" value="headless_chrome"/>
     <classes>
       <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
     </classes>
-    
-  </test> 
+  </test>
   
-  <test name="Run on Firefox Headless">
+  <test name="Run on Firefox headless">
   <parameter name="browser" value="headless_firefox"/>
     <classes>
       <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting"/>
     </classes>
-    
-  </test> 
-</suite> 
+  </test> Test
+</suite> <!-- Suite -->

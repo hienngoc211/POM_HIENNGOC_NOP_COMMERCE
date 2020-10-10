@@ -1,32 +1,25 @@
 package com.login.nopcommerce_login;
 
 import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import commons.AbstractTest;
 import commons.PageGeneratorManager;
 import pageObjects_nopcommerce.HomePageObject;
 import pageObjects_nopcommerce.LoginPageObject;
 import pageObjects_nopcommerce.RegisterPageObject;
 
-public class Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting {
+
+public class Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting extends AbstractTest {
 
 	WebDriver driver;
-	Select select;
-	WebDriverWait wait;
+	
 	String firstName = "Virus";
 	String lastName = "Corona";
 	String email = "coronavirus" + randomNumber() + "@hotmail.com";
@@ -41,41 +34,22 @@ public class Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting {
 	private LoginPageObject loginPage;
 	private RegisterPageObject registerPage;
 
-	@Parameters({"browser", "url"})
+	@Parameters("browser")
 	@BeforeTest
-	public void beforeTest(String browserName, String UATUrl) {
+	public void beforeTest(String browserName) {
 //		System.out.println("Browser name = " + browserName);
 //		System.out.println("UAT url= " + UATUrl);
-		if(browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "./BrowserDrivers/chromedriver");
-			driver = new ChromeDriver();
-		} else if(browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver_mac");
-			driver = new FirefoxDriver();
-		} else if (browserName.equalsIgnoreCase("headless_chrome")) {
-			System.setProperty("webdriver.chrome.driver", "./BrowserDrivers/chromedriver");
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
-			options.addArguments("window-size=1920x1080");
-			driver = new ChromeDriver(options);
-		} else if(browserName.equalsIgnoreCase("headless_firefox")){
-			System.setProperty("webdriver.gecko.driver", "./BrowserDrivers/geckodriver_mac");
-			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("headless");
-			options.addArguments("window-size=1920x1080");
-			driver = new FirefoxDriver(options);
-
 		
-		driver.get(UATUrl); 
+//		Hứng driver từ AbstracTest vì driver được khởi tạo ban đầu từ AbstractTest, testcase chưa có driver, nếu gán vào ban đầu sẽ trả về Null Pointer Exception
+		
+		driver = getBrowserDriver(browserName);
 		homePage = PageGeneratorManager.getHomePage(driver);
-		driver.manage().timeouts().implicitlyWait(longTimeOut, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		
-		}
+				
 	}
+
 	@Test
 
-	public void TC_01_RegisterToSystem() throws InterruptedException {
+	public void TC_01_RegisterToSystem(){
 		registerPage = homePage.clickToRegisterLink();
 		registerPage.clickToMale();
 		registerPage.inputToFirstName(firstName);

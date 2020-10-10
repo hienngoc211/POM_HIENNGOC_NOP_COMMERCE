@@ -1,29 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="29786" started-at="2020-09-29T09:46:32Z" finished-at="2020-09-29T09:47:01Z">
+  <suite name="Nop Commerce" duration-ms="71334" started-at="2020-10-10T03:14:37Z" finished-at="2020-10-10T03:15:48Z">
     <groups>
     </groups>
-    <test name="Run on Firefox" duration-ms="29786" started-at="2020-09-29T09:46:32Z" finished-at="2020-09-29T09:47:01Z">
-      <class name="com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage@25618e91]" name="beforeTest" is-config="true" duration-ms="13981" started-at="2020-09-29T16:46:32Z" finished-at="2020-09-29T16:46:46Z">
+    <test name="Run on CHROME" duration-ms="23417" started-at="2020-10-10T03:14:37Z" finished-at="2020-10-10T03:15:00Z">
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@4b6995df]" name="beforeTest" is-config="true" duration-ms="10746" started-at="2020-10-10T10:14:37Z" finished-at="2020-10-10T10:14:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="TC_01_RegisterToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage@25618e91]" name="TC_01_RegisterToSystem" duration-ms="10510" started-at="2020-09-29T16:46:46Z" finished-at="2020-09-29T16:46:56Z">
+        <test-method status="PASS" signature="TC_01_RegisterToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@4b6995df]" name="TC_01_RegisterToSystem" duration-ms="7943" started-at="2020-10-10T10:14:47Z" finished-at="2020-10-10T10:14:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_01_RegisterToSystem -->
-        <test-method status="PASS" signature="TC_02_LoginToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage@25618e91]" name="TC_02_LoginToSystem" duration-ms="3131" started-at="2020-09-29T16:46:56Z" finished-at="2020-09-29T16:46:59Z">
+        <test-method status="PASS" signature="TC_02_LoginToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@4b6995df]" name="TC_02_LoginToSystem" duration-ms="4623" started-at="2020-10-10T10:14:55Z" finished-at="2020-10-10T10:15:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_02_LoginToSystem -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage@25618e91]" name="afterTest" is-config="true" duration-ms="2137" started-at="2020-09-29T16:46:59Z" finished-at="2020-09-29T16:47:01Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@4b6995df]" name="afterTest" is-config="true" duration-ms="91" started-at="2020-10-10T10:15:00Z" finished-at="2020-10-10T10:15:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.login.nopcommerce_login.Login_02_RegisterAndLogin_AbstractPage -->
+      </class> <!-- com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting -->
+    </test> <!-- Run on CHROME -->
+    <test name="Run on Firefox" duration-ms="16671" started-at="2020-10-10T03:15:00Z" finished-at="2020-10-10T03:15:17Z">
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@6ea6d14e]" name="beforeTest" is-config="true" duration-ms="5213" started-at="2020-10-10T10:15:00Z" finished-at="2020-10-10T10:15:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="TC_01_RegisterToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@6ea6d14e]" name="TC_01_RegisterToSystem" duration-ms="7328" started-at="2020-10-10T10:15:05Z" finished-at="2020-10-10T10:15:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_01_RegisterToSystem -->
+        <test-method status="PASS" signature="TC_02_LoginToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@6ea6d14e]" name="TC_02_LoginToSystem" duration-ms="2437" started-at="2020-10-10T10:15:13Z" finished-at="2020-10-10T10:15:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_02_LoginToSystem -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@6ea6d14e]" name="afterTest" is-config="true" duration-ms="1692" started-at="2020-10-10T10:15:15Z" finished-at="2020-10-10T10:15:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting -->
     </test> <!-- Run on Firefox -->
-  </suite> <!-- Suite -->
+    <test name="Run on Chrome headless" duration-ms="12380" started-at="2020-10-10T03:15:17Z" finished-at="2020-10-10T03:15:29Z">
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@35851384]" name="beforeTest" is-config="true" duration-ms="2096" started-at="2020-10-10T10:15:17Z" finished-at="2020-10-10T10:15:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[headless_chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="TC_01_RegisterToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@35851384]" name="TC_01_RegisterToSystem" duration-ms="7602" started-at="2020-10-10T10:15:19Z" finished-at="2020-10-10T10:15:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_01_RegisterToSystem -->
+        <test-method status="PASS" signature="TC_02_LoginToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@35851384]" name="TC_02_LoginToSystem" duration-ms="2602" started-at="2020-10-10T10:15:26Z" finished-at="2020-10-10T10:15:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_02_LoginToSystem -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@35851384]" name="afterTest" is-config="true" duration-ms="78" started-at="2020-10-10T10:15:29Z" finished-at="2020-10-10T10:15:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting -->
+    </test> <!-- Run on Chrome headless -->
+    <test name="Run on Firefox headless" duration-ms="18707" started-at="2020-10-10T03:15:29Z" finished-at="2020-10-10T03:15:48Z">
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@d7b1517]" name="beforeTest" is-config="true" duration-ms="4392" started-at="2020-10-10T10:15:29Z" finished-at="2020-10-10T10:15:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[headless_firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="TC_01_RegisterToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@d7b1517]" name="TC_01_RegisterToSystem" duration-ms="8406" started-at="2020-10-10T10:15:34Z" finished-at="2020-10-10T10:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_01_RegisterToSystem -->
+        <test-method status="PASS" signature="TC_02_LoginToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@d7b1517]" name="TC_02_LoginToSystem" duration-ms="3292" started-at="2020-10-10T10:15:42Z" finished-at="2020-10-10T10:15:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_02_LoginToSystem -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@d7b1517]" name="afterTest" is-config="true" duration-ms="2616" started-at="2020-10-10T10:15:45Z" finished-at="2020-10-10T10:15:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting -->
+    </test> <!-- Run on Firefox headless -->
+  </suite> <!-- Nop Commerce -->
 </testng-results>
