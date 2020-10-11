@@ -1,6 +1,7 @@
 package commons;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects_nopcommerce.FooterMyAccountPageObject;
 import pageObjects_nopcommerce.FooterNewProductsPageObject;
@@ -17,6 +18,10 @@ public class PageGeneratorManager {
 
 	public static LoginPageObject getLoginPage(WebDriver driver) {
 		return new LoginPageObject(driver);
+	}
+	
+	public static LoginPageObject getLoginPage(WebDriver driver, WebDriverWait wait) {
+		return new LoginPageObject(driver, wait);
 	}
 
 	public static RegisterPageObject getRegisterPage(WebDriver driver) {

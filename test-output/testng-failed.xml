@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="3" name="Failed suite [Nop Commerce]" parallel="tests">
-  <parameter name="browser" value="chrome"/>
-  <test name="Run on CHROME">
-    <parameter name="browser" value="chrome"/>
+  <parameter name="browser" value="firefox"/>
+  <test name="Run on ">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain"/>
+      <class name="com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator"/>
     </classes>
-  </test> <!-- Run on CHROME -->
+  </test> <!-- Run on  -->
+  <test name="Run on (failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator">
+        <methods>
+          <include name="TC_04_Dynamic_More"/>
+          <include name="afterTest"/>
+          <include name="TC_03_Dynamic_less"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator -->
+    </classes>
+  </test> <!-- Run on (failed) -->
 </suite> <!-- Failed suite [Nop Commerce] -->

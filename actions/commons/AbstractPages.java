@@ -66,7 +66,6 @@ public abstract class AbstractPages {
 	public String getTextAlert(WebDriver driver) {
 		return driver.switchTo().alert().getText();
 	}
-
 	public void sendKeyToAlert(WebDriver driver,String value) {
 		driver.switchTo().alert().sendKeys(value);
 	}
@@ -74,17 +73,42 @@ public abstract class AbstractPages {
 	public By byXpathLocator(String locator) {
 		return By.xpath(locator);
 	}
+	
+	public By byXpathLocator(String locator, String...values) {
+		locator = String.format(locator, (Object[])values);
+		return By.xpath(locator);
+	}
 
 	public WebElement findElementByXpath(WebDriver driver,String locator) {
 		return driver.findElement(byXpathLocator(locator));
+	}
+	
+	public WebElement findElementByXpath(WebDriver driver, String locator, String...values) {
+		locator = String.format(locator, (Object[])values);
+		return driver.findElement(byXpathLocator(locator));
+	}
+
+	
+	public String getDynamicLocator(String locator, String...values){
+		locator = String.format(locator, (Object[])values);
+		return locator;
 	}
 
 	public List<WebElement> findElementsByXpath(WebDriver driver,String locator) {
 		return driver.findElements(byXpathLocator(locator));
 	}
+	
+	public List<WebElement> findElementsByXpath(WebDriver driver,String locator, String...values) {
+		locator = String.format(locator, (Object[])values);
+		return driver.findElements(byXpathLocator(locator));
+	}
 
 	public void clickToElement(WebDriver driver,String locator) {
 		findElementByXpath(driver, locator).click();
+	}
+	
+	public void clickToElement(WebDriver driver, String locator, String...values) {
+		findElementByXpath(driver, locator, values).click();
 	}
 
 	public void sendKeyToElement(WebDriver driver,String locator, String value) {
@@ -112,6 +136,10 @@ public abstract class AbstractPages {
 	public boolean isElementDisplayed(WebDriver driver,String locator) {
 		return findElementByXpath(driver, locator).isDisplayed();
 	}
+	
+	public boolean isElementDisplayed(WebDriver driver, String locator, String...values) {
+		return findElementByXpath(driver, locator, values).isDisplayed();
+	}
 
 	public void hoverMouseToElement(WebDriver driver,String locator) {
 		action = new Actions(driver);
@@ -125,14 +153,27 @@ public abstract class AbstractPages {
 		action.doubleClick().build().perform();
 	}
 
-	public void waitToElementDisplayed(WebDriver driver,String locator) {
+	public void waitToElementVisible(WebDriver driver,String locator) {
 		byXpath = byXpathLocator(locator);
 		waitExplicit = new WebDriverWait(driver, longTimeOut);
 		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated((byXpath)));
 	}
+	
+	public void waitToElementDisplayed(WebDriver driver,String locator, String...values) {
+		byXpath = byXpathLocator(locator, values);
+		waitExplicit = new WebDriverWait(driver, longTimeOut);
+		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated((byXpath)));
+	}
+		
 
 	public void waitToElementClickable(WebDriver driver,String locator) {
 		byXpath = byXpathLocator(locator);
+		waitExplicit = new WebDriverWait(driver, longTimeOut);
+		waitExplicit.until(ExpectedConditions.elementToBeClickable(byXpath));
+	}
+	
+	public void waitToElementClickable(WebDriver driver,String locator, String...values) {
+		byXpath = byXpathLocator(locator,values);
 		waitExplicit = new WebDriverWait(driver, longTimeOut);
 		waitExplicit.until(ExpectedConditions.elementToBeClickable(byXpath));
 	}
@@ -146,7 +187,7 @@ public abstract class AbstractPages {
 		return findElementByXpath(driver, locator).getText();
 	}
 	
-//	Open Footer Page
+//	Open Footer Page - 23 pages => open 23 pages
 	
 	public FooterMyAccountPageObject openFooterMyAccountPage(WebDriver driver) {
 		waitToElementClickable(driver, AbstractPageUI.FOOTER_MY_ACCOUNT_LINK);
@@ -173,4 +214,28 @@ public abstract class AbstractPages {
 		return PageGeneratorManager.getFooterNewProductsPageObject(driver);
 	}
 
+
+	//  Case 10-15 pages
+	
+	public AbstractPages openFooterPageByName(WebDriver driver, String pageName) {
+		waitToElementClickable(driver, AbstractPageUI.FOOTER_NEW_PRODUCT_LINK, pageName);
+		clickToElement(driver, AbstractPageUI.FOOTER_NEW_PRODUCT_LINK, pageName);
+		// Factory Pattern
+		switch (pageName) {
+		case "Search":		
+			return PageGeneratorManager.getFooterSearchPageObject(driver);
+		case "New products":
+			return PageGeneratorManager.getFooterNewProductsPageObject(driver);
+		default:
+			return PageGeneratorManager.getFooterMyAccountPage(driver);
+		}
+	}
+	
+	// Case more pages
+	public void openFooterPagesByName(WebDriver driver, String pageName) {
+	waitToElementClickable(driver, AbstractPageUI.FOOTER_NEW_PRODUCT_LINK, pageName);
+	clickToElement(driver, AbstractPageUI.FOOTER_NEW_PRODUCT_LINK, pageName);
+	}
 }
+
+	

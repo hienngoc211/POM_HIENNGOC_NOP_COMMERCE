@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Nop_Commerce">
-              <span class="suite-name border-passed">Nop Commerce</span>
+              <span class="suite-name border-failed">Nop Commerce</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Nop_Commerce" class="hide-methods failed suite-Nop_Commerce"> (hide)</a> <!-- hide-methods failed suite-Nop_Commerce -->
+                      <a href="#" panel-name="suite-Nop_Commerce" class="show-methods failed suite-Nop_Commerce"> (show)</a> <!-- show-methods failed suite-Nop_Commerce -->
+                    </span>
+                    <div class="method-list-content failed suite-Nop_Commerce">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Nop_Commerce" title="com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator" hash-for-method="TC_03_Dynamic_less">TC_03_Dynamic_less</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Nop_Commerce" title="com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator" hash-for-method="TC_04_Dynamic_More">TC_04_Dynamic_More</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Nop_Commerce -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,17 +121,12 @@
                     <div class="method-list-content passed suite-Nop_Commerce">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Nop_Commerce" title="com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain" hash-for-method="TC_01_RegisterToSystem">TC_01_RegisterToSystem</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Nop_Commerce" title="com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator" hash-for-method="TC_01_RegisterToSystem">TC_01_RegisterToSystem</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Nop_Commerce" title="com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain" hash-for-method="TC_02_LoginToSystem">TC_02_LoginToSystem</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Nop_Commerce" title="com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain" hash-for-method="TC_03_ActionChain">TC_03_ActionChain</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Nop_Commerce" title="com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator" hash-for-method="TC_02_LoginToSystem">TC_02_LoginToSystem</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Nop_Commerce -->
@@ -127,10 +141,50 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Nop_Commerce" class="panel Nop_Commerce">
+          <div class="suite-Nop_Commerce-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_03_Dynamic_less">
+                  </a> <!-- TC_03_Dynamic_less -->
+                  <span class="method-name">TC_03_Dynamic_less</span>
+                  <div class="stack-trace">java.lang.ClassCastException: pageObjects_nopcommerce.FooterMyAccountPageObject cannot be cast to pageObjects_nopcommerce.FooterNewProductsPageObject
+	at com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator.TC_03_Dynamic_less(Login_08_RegisterAndLogin_Dynamic_Locator.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Only use incase less page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_04_Dynamic_More">
+                  </a> <!-- TC_04_Dynamic_More -->
+                  <span class="method-name">TC_04_Dynamic_More</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator.TC_04_Dynamic_More(Login_08_RegisterAndLogin_Dynamic_Locator.java:119)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Nop_Commerce-class-failed -->
           <div class="suite-Nop_Commerce-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain</span>
+              <span class="class-name">com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -147,13 +201,6 @@
                   <span class="method-name">TC_02_LoginToSystem</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC_03_ActionChain">
-                  </a> <!-- TC_03_ActionChain -->
-                  <span class="method-name">TC_03_ActionChain</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Nop_Commerce-class-passed -->
         </div> <!-- panel Nop_Commerce -->
@@ -166,12 +213,12 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;3&quot; name=&quot;Nop Commerce&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test name=&quot;Run on CHROME&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+  &lt;test name=&quot;Run on &quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain&quot;/&gt;
+      &lt;class name=&quot;com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Run on CHROME --&gt;
+  &lt;/test&gt; &lt;!-- Run on  --&gt;
 &lt;/suite&gt; &lt;!-- Nop Commerce --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -183,7 +230,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Run on CHROME (1 class)</span>
+                <span class="test-name">Run on  (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -209,24 +256,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC_03_ActionChain')
-data.setCell(0, 2, 'com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain')
-data.setCell(0, 3, 13968);
+data.setCell(0, 1, 'TC_01_RegisterToSystem')
+data.setCell(0, 2, 'com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator')
+data.setCell(0, 3, 7880);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TC_01_RegisterToSystem')
-data.setCell(1, 2, 'com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain')
-data.setCell(1, 3, 7576);
+data.setCell(1, 1, 'TC_02_LoginToSystem')
+data.setCell(1, 2, 'com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator')
+data.setCell(1, 3, 3966);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TC_02_LoginToSystem')
-data.setCell(2, 2, 'com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain')
-data.setCell(2, 3, 2377);
+data.setCell(2, 1, 'TC_03_Dynamic_less')
+data.setCell(2, 2, 'com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator')
+data.setCell(2, 3, 2880);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TC_04_Dynamic_More')
+data.setCell(3, 2, 'com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator')
+data.setCell(3, 3, 1);
 window.suiteTableData['Nop_Commerce']= { tableData: data, tableDiv: 'times-div-Nop_Commerce'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 23 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Nop_Commerce">
               </div> <!-- times-div-Nop_Commerce -->
             </div> <!-- times-div -->
@@ -252,26 +303,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.login.nopcommerce_login.Login_07_RegisterAndLogin_ActionChain</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">beforeTest(chrome)</span>
+                <span class="method-name">beforeTest(firefox)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TC_01_RegisterToSystem</span>
-                <span class="method-start">3961 ms</span>
+                <span class="method-start">8708 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC_02_LoginToSystem</span>
-                <span class="method-start">11539 ms</span>
+                <span class="method-start">16589 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TC_03_ActionChain</span>
-                <span class="method-start">13917 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC_03_Dynamic_less</span>
+                <span class="method-start">20556 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC_04_Dynamic_More</span>
+                <span class="method-start">23437 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">27887 ms</span>
+                <span class="method-start">23440 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
