@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="2" total="4" passed="2">
+=======
+<testng-results skipped="2" failed="0" total="2" passed="0">
+>>>>>>> branch 'master' of https://github.com/hienngoc211/POM_HIENNGOC_NOP_COMMERCE
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Nop Commerce" duration-ms="25102" started-at="2020-10-11T13:14:19Z" finished-at="2020-10-11T13:14:44Z">
+=======
+  <suite name="Default suite" duration-ms="59" started-at="2020-10-09T10:26:47Z" finished-at="2020-10-09T10:26:47Z">
+>>>>>>> branch 'master' of https://github.com/hienngoc211/POM_HIENNGOC_NOP_COMMERCE
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Run on " duration-ms="25102" started-at="2020-10-11T13:14:19Z" finished-at="2020-10-11T13:14:44Z">
       <class name="com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator">
         <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator@4b6995df]" name="beforeTest" is-config="true" duration-ms="8700" started-at="2020-10-11T20:14:19Z" finished-at="2020-10-11T20:14:27Z">
@@ -15,17 +24,63 @@
               </value>
             </param>
           </params>
+=======
+    <test name="Default test" duration-ms="59" started-at="2020-10-09T10:26:47Z" finished-at="2020-10-09T10:26:47Z">
+      <class name="com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting">
+        <test-method status="FAIL" signature="beforeTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@3e77a1ed]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-10-09T17:26:47Z" finished-at="2020-10-09T17:26:47Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by @Configuration on method beforeTest but has not been marked @Optional or defined
+in /private/var/folders/md/89v001z571912cdwq2dn5hlc0000gp/T/testng-eclipse--449337580/testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by @Configuration on method beforeTest but has not been marked @Optional or defined
+in /private/var/folders/md/89v001z571912cdwq2dn5hlc0000gp/T/testng-eclipse--449337580/testng-customsuite.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:154)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:361)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:84)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:201)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:656)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+>>>>>>> branch 'master' of https://github.com/hienngoc211/POM_HIENNGOC_NOP_COMMERCE
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="TC_01_RegisterToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator@4b6995df]" name="TC_01_RegisterToSystem" duration-ms="7880" started-at="2020-10-11T20:14:27Z" finished-at="2020-10-11T20:14:35Z">
+=======
+        <test-method status="SKIP" signature="TC_01_RegisterToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@3e77a1ed]" name="TC_01_RegisterToSystem" duration-ms="8" started-at="2020-10-09T17:26:47Z" finished-at="2020-10-09T17:26:47Z">
+>>>>>>> branch 'master' of https://github.com/hienngoc211/POM_HIENNGOC_NOP_COMMERCE
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_01_RegisterToSystem -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="TC_02_LoginToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator@4b6995df]" name="TC_02_LoginToSystem" duration-ms="3966" started-at="2020-10-11T20:14:35Z" finished-at="2020-10-11T20:14:39Z">
+=======
+        <test-method status="SKIP" signature="TC_02_LoginToSystem()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@3e77a1ed]" name="TC_02_LoginToSystem" duration-ms="1" started-at="2020-10-09T17:26:47Z" finished-at="2020-10-09T17:26:47Z">
+>>>>>>> branch 'master' of https://github.com/hienngoc211/POM_HIENNGOC_NOP_COMMERCE
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_02_LoginToSystem -->
+<<<<<<< HEAD
         <test-method status="FAIL" signature="TC_03_Dynamic_less()[pri:0, instance:com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator@4b6995df]" name="TC_03_Dynamic_less" duration-ms="2880" started-at="2020-10-11T20:14:39Z" description="Only use incase less page" finished-at="2020-10-11T20:14:42Z">
           <exception class="java.lang.ClassCastException">
             <message>
@@ -92,10 +147,19 @@
           </reporter-output>
         </test-method> <!-- TC_04_Dynamic_More -->
         <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator@4b6995df]" name="afterTest" is-config="true" duration-ms="1660" started-at="2020-10-11T20:14:42Z" finished-at="2020-10-11T20:14:44Z">
+=======
+        <test-method status="SKIP" signature="afterTest()[pri:0, instance:com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting@3e77a1ed]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-10-09T17:26:47Z" finished-at="2020-10-09T17:26:47Z">
+>>>>>>> branch 'master' of https://github.com/hienngoc211/POM_HIENNGOC_NOP_COMMERCE
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
+<<<<<<< HEAD
       </class> <!-- com.login.nopcommerce_login.Login_08_RegisterAndLogin_Dynamic_Locator -->
     </test> <!-- Run on  -->
   </suite> <!-- Nop Commerce -->
+=======
+      </class> <!-- com.login.nopcommerce_login.Login_06_RegisterAndLogin_MultipleBrowser_ParallelTesting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> branch 'master' of https://github.com/hienngoc211/POM_HIENNGOC_NOP_COMMERCE
 </testng-results>
