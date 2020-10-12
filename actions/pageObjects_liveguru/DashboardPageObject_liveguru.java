@@ -14,7 +14,7 @@ public class DashboardPageObject_liveguru extends AbstractPages {
 	}
 
 	public boolean isFullNameOrEmailDisplayed(String errorMsg) {
-		waitToElementDisplayed(driver, String.format(DashboardPageUI_liveguru.EMAIL_PASSWORD_TEXT, errorMsg));
+		waitToElementVisible(driver, String.format(DashboardPageUI_liveguru.EMAIL_PASSWORD_TEXT, errorMsg));
 		return isElementDisplayed(driver, String.format(DashboardPageUI_liveguru.EMAIL_PASSWORD_TEXT, errorMsg));
 	}
 

@@ -21,12 +21,12 @@ public class LoginPageObject extends AbstractPages {
 	}
 	
 	public void sendKeyToEmailTextBox(String emailValue) {
-		waitToElementDisplayed(driver, LoginPageUI.EMAIL);
+		waitToElementVisible(driver, LoginPageUI.EMAIL);
 		sendKeyToElement(driver, LoginPageUI.EMAIL, emailValue);
 	}
 
 	public void sendKeyToPasswordTextBox(String passwordValue) {
-		waitToElementDisplayed(driver, LoginPageUI.PASSWORD);
+		waitToElementVisible(driver, LoginPageUI.PASSWORD);
 		sendKeyToElement(driver, LoginPageUI.PASSWORD, passwordValue);
 		
 	}

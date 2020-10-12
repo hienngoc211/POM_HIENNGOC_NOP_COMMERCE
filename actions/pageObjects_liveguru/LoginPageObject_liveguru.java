@@ -14,13 +14,13 @@ public class LoginPageObject_liveguru extends AbstractPages {
 	}
 
 	public void sendKeyToEmailTextbox(String emailValue) {
-		waitToElementDisplayed(driver, LoginPageUI_liveguru.EMAIL_TEXTBOX);
+		waitToElementVisible(driver, LoginPageUI_liveguru.EMAIL_TEXTBOX);
 		sendKeyToElement(driver, LoginPageUI_liveguru.EMAIL_TEXTBOX, emailValue);
 		
 	}
 
 	public void sendKeyToPasswordTextbox(String passValue) {
-		waitToElementDisplayed(driver, LoginPageUI_liveguru.PASSWORD_TEXTBOX);
+		waitToElementVisible(driver, LoginPageUI_liveguru.PASSWORD_TEXTBOX);
 		sendKeyToElement(driver, LoginPageUI_liveguru.PASSWORD_TEXTBOX, passValue);
 		
 	}
@@ -32,32 +32,32 @@ public class LoginPageObject_liveguru extends AbstractPages {
 	}
 
 	public boolean isEmptyEmailErrorMessageDisplayed(String errorMsg) {
-		waitToElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE, errorMsg));
+		waitToElementVisible(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE, errorMsg));
 		return isElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE, errorMsg));
 	}
 
 	public boolean isEmptyPasswordErrorMessageDisplayed(String errorMsg) {
-		waitToElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_PASS,errorMsg));
+		waitToElementVisible(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_PASS,errorMsg));
 		return isElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE, errorMsg));
 	}
 
 	public boolean InvalidEmailErrorMsgDisplayed(String errorMsg) {
-		waitToElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_INVALID_EMAIL, errorMsg));
+		waitToElementVisible(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_INVALID_EMAIL, errorMsg));
 		return isElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_INVALID_EMAIL, errorMsg));
 	}
 
 	public boolean PasswordLessThan6Chars(String errorMsg) {
-		waitToElementDisplayed(driver, String.format(LoginPageUI_liveguru.PASSWORD_LESS_THAN_6_CHARACTERS, errorMsg));
+		waitToElementVisible(driver, String.format(LoginPageUI_liveguru.PASSWORD_LESS_THAN_6_CHARACTERS, errorMsg));
 		return isElementDisplayed(driver, String.format(LoginPageUI_liveguru.PASSWORD_LESS_THAN_6_CHARACTERS, errorMsg));
 	}
 
 	public boolean isEmailNotExistOrInvalidPasswordErrorMsgDisplayed(String errorMsg) {
-		waitToElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_NOT_EXIST_EMAIL_OR_INCORRECT_PASSWORD, errorMsg));
+		waitToElementVisible(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_NOT_EXIST_EMAIL_OR_INCORRECT_PASSWORD, errorMsg));
 		return isElementDisplayed(driver,String.format(LoginPageUI_liveguru.ERROR_MESSAGE_NOT_EXIST_EMAIL_OR_INCORRECT_PASSWORD, errorMsg));
 	}
 
 	public boolean isIncorrectPassErrorMsgDisplayed(String errorMsg) {
-		waitToElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_NOT_EXIST_EMAIL_OR_INCORRECT_PASSWORD, errorMsg));
+		waitToElementVisible(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_NOT_EXIST_EMAIL_OR_INCORRECT_PASSWORD, errorMsg));
 		return isElementDisplayed(driver, String.format(LoginPageUI_liveguru.ERROR_MESSAGE_NOT_EXIST_EMAIL_OR_INCORRECT_PASSWORD, errorMsg));
 	}
 

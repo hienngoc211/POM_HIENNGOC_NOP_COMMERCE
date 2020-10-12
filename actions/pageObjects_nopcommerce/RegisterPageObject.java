@@ -19,52 +19,52 @@ public class RegisterPageObject extends AbstractPages {
 	}
 
 	public void inputToFirstName(String firstNameValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.FIRST_NAME);
+		waitToElementVisible(driver, RegisterPageUI.FIRST_NAME);
 		sendKeyToElement(driver, RegisterPageUI.FIRST_NAME, firstNameValue);
 		
 	}
 
 	public void inputToLastName(String lastNameValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.LAST_NAME);
+		waitToElementVisible(driver, RegisterPageUI.LAST_NAME);
 		sendKeyToElement(driver, RegisterPageUI.LAST_NAME, lastNameValue);
 	}
 
 	public void selectDateDropdown(String dayValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.DAY_DROPDOWN);
+		waitToElementVisible(driver, RegisterPageUI.DAY_DROPDOWN);
 		sendKeyToElement(driver, RegisterPageUI.DAY_DROPDOWN, dayValue);
 		
 	}
 
 	public void selectMonthDropdown(String monthValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.MONTH_DROPDOWN);
+		waitToElementVisible(driver, RegisterPageUI.MONTH_DROPDOWN);
 		sendKeyToElement(driver, RegisterPageUI.MONTH_DROPDOWN, monthValue);
 		
 	}
 
 	public void selectYearDropdown(String yearValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.YEAR_DROPDOWN);
+		waitToElementVisible(driver, RegisterPageUI.YEAR_DROPDOWN);
 		sendKeyToElement(driver, RegisterPageUI.YEAR_DROPDOWN, yearValue);
 	}
 
 	public void sendKeyToEmail(String emailValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.EMAIL);
+		waitToElementVisible(driver, RegisterPageUI.EMAIL);
 		sendKeyToElement(driver, RegisterPageUI.EMAIL, emailValue);
 		
 	}
 
 	public void sendKeyToCompany(String companyValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.COMPANY);
+		waitToElementVisible(driver, RegisterPageUI.COMPANY);
 		sendKeyToElement(driver, RegisterPageUI.COMPANY, companyValue);
 	}
 
 	public void sendKeyToPassword(String passwordValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.PASSWORD);
+		waitToElementVisible(driver, RegisterPageUI.PASSWORD);
 		sendKeyToElement(driver, RegisterPageUI.PASSWORD, passwordValue);
 		
 	}
 
 	public void sendKeyToConfirmPassWord(String passwordValue) {
-		waitToElementDisplayed(driver, RegisterPageUI.CONFIRM_PASSWORD);
+		waitToElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD);
 		sendKeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD, passwordValue);
 	}
 
@@ -74,7 +74,7 @@ public class RegisterPageObject extends AbstractPages {
 	}
 
 	public String getRegisterSuccessMsg() {
-		waitToElementDisplayed(driver, RegisterPageUI.REGISTER_SUCCESS);
+		waitToElementVisible(driver, RegisterPageUI.REGISTER_SUCCESS);
 		getTextElement(driver, RegisterPageUI.REGISTER_SUCCESS);
 		return getTextElement(driver, RegisterPageUI.REGISTER_SUCCESS); 
 		
