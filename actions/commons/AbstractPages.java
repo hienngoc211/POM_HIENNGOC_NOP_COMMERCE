@@ -116,6 +116,12 @@ public abstract class AbstractPages {
 		findElementByXpath(driver, locator).sendKeys(value);
 	}
 	
+	public void sendKeyToElement(WebDriver driver,String locator, String valueToSendkey, String...values) {
+//		findElementByXpath(driver, locator).clear();
+		findElementByXpath(driver, locator, values).sendKeys(valueToSendkey);
+	}
+	
+	
 	public void sleepInSecond(long timeout) {
 		try {
 			Thread.sleep(timeout*1000);
@@ -185,6 +191,11 @@ public abstract class AbstractPages {
 	}
 	public String getTextElement(WebDriver driver, String locator) {
 		return findElementByXpath(driver, locator).getText();
+	}
+	
+	public String getTextElement(WebDriver driver, String locator, String...values) {
+		return findElementByXpath(driver, locator, values).getText();
+
 	}
 	
 //	Open Footer Page - 23 pages => open 23 pages

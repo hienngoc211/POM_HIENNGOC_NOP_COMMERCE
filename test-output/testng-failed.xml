@@ -6,15 +6,4 @@
       <class name="com.framework.datatable.Handle_Dynamic_DataTable_Grid"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.framework.datatable.Handle_Dynamic_DataTable_Grid">
-        <methods>
-          <include name="TC_01_Click_To_Page"/>
-          <include name="beforeClass"/>
-          <include name="afterClass"/>
-        </methods>
-      </class> <!-- com.framework.datatable.Handle_Dynamic_DataTable_Grid -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
