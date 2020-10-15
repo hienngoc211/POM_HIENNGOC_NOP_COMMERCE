@@ -18,6 +18,7 @@ import org.testng.annotations.AfterTest;
 public class Handle_Dynamic_DataTable_Grid extends AbstractPages {
 	WebDriver driver;
 	String locator, total;
+	int index;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -56,13 +57,25 @@ public class Handle_Dynamic_DataTable_Grid extends AbstractPages {
 		
 	}
 	
-	@Test
+//	@Test
 	public void TC_03_Get_Total_Value_By_Country() {
 		driver.get("https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/");
 		total = getTotalValueByCountryName("Argentina");
 		Assert.assertEquals(total, "687522");
 		sleepInSecond(5);
 
+	}
+	
+	@Test
+	
+	public void TC_04_Input_To_Textbox() {
+		driver.get("http://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
+//		inputToTextboxByColumnAndRowNumber("company", "2", "KMS");
+		inputToTextboxByColumnAndRow("company", "2", "KMS");
+		sleepInSecond(2);
+//		inputToTextboxByColumnAndRowNumber("name", "1", "Automation");
+		inputToTextboxByColumnAndRow("name", "1", "Automation");
+		sleepInSecond(2);
 	}
 	
 	
@@ -95,10 +108,24 @@ public class Handle_Dynamic_DataTable_Grid extends AbstractPages {
 			
 		}
 		
-		public void inputToTextboxByColumnAndRowNumber(String columnName, String rowNumber) {
-			locator = "//select[@id='tblAppendGrid_%s_%s']";
+		public void inputToTextboxByColumnAndRowNumber(String columnName, String rowNumber, String value) {
+			locator = "//input[@id='tblAppendGrid_%s_%s']";
 			waitToElementVisible(driver, locator, columnName, rowNumber);
-			sendKeyToElement(driver, locator,columnName, rowNumber);
+			sendKeyToElement(driver, locator,value,columnName, rowNumber);
+		}
+		
+		public void inputToTextboxByColumnAndRow(String columnName, String rowNumber, String value) {
+			// Công thêm với 1 để biết được idex chính xpath đó 
+			locator = "count (//th[text()='%s']//preceding-sibling::th)";
+			index = findElementsByXpath(driver, locator, columnName).size() + 1;
+			locator = "//tr["+ rowNumber +"]//td["+ index +"]/input";
+			waitToElementVisible(driver, locator);
+			sendKeyToElement(driver, locator, value);
+			
+		}
+		
+		public void clickToIconByRowNumber(String iconName, String rowNumber) {
+			
 		}
 		
 		
